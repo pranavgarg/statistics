@@ -19,13 +19,8 @@ binomial_distribution( 0.9)
 
 def variance(data, mu):
     data.sort
-    print data
     square = lambda x:x**2
-    new_data = [(i-mu) for i in data]
-    print new_data
-    variance_2_step = map(square, new_data)
-    print variance_2_step
-    return float(sum(variance_2_step)/len(data))
+    return float(sum(map(square, [(i-mu) for i in data]))/len(data))
 
 def create_data(no, times):
     data = []
